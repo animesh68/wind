@@ -25,7 +25,7 @@ export function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans">
+    <div className="min-h-screen bg-[#F5F5F0] text-[#29332E] flex flex-col font-sans antialiased">
       <Header
         cutoffTime={cutoffTime}
         setCutoffTime={setCutoffTime}
@@ -42,7 +42,7 @@ export function App() {
           matchingMode={matchingMode}
         />
 
-        <main className="flex-1 overflow-y-auto p-6 bg-slate-950/40">
+        <main className="flex-1 overflow-y-auto p-4 md:p-6 lg:p-8 bg-[#F5F5F0]">
           <div className="max-w-7xl mx-auto">
             {currentTab === 'overview' && (
               <Overview cutoffTime={cutoffTime} matchingMode={matchingMode} />

@@ -33,13 +33,13 @@ export const Sidebar: React.FC<SidebarProps> = ({
   ];
 
   return (
-    <aside className="w-64 border-r border-slate-800 bg-slate-900/60 flex flex-col justify-between shrink-0">
+    <aside className="w-64 border-r border-[#E2E5DE] bg-[#ECEFE8] flex flex-col justify-between shrink-0 shadow-[1px_0_2px_rgba(0,0,0,0.01)]">
       <div className="p-4 space-y-6">
         <div>
-          <div className="text-[11px] font-mono uppercase tracking-wider text-slate-500 font-semibold px-3 mb-2">
+          <div className="text-[11px] font-mono uppercase tracking-wider text-[#89928A] font-semibold px-3 mb-2.5">
             Workstation Views
           </div>
-          <nav className="space-y-1">
+          <nav className="space-y-1.5">
             {navItems.map((item) => {
               const Icon = item.icon;
               const isActive = currentTab === item.id;
@@ -47,16 +47,20 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 <button
                   key={item.id}
                   onClick={() => onSelectTab(item.id)}
-                  className={`w-full flex items-start space-x-3 px-3 py-2.5 rounded-lg text-left transition-all ${
+                  className={`w-full flex items-start space-x-3 px-3 py-2.5 rounded-lg text-left transition-all relative ${
                     isActive
-                      ? 'bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 shadow-sm'
-                      : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/50'
+                      ? 'bg-[#EAF1EB] text-[#285C46] font-medium shadow-xs'
+                      : 'text-[#68736C] hover:text-[#29332E] hover:bg-[#E2E5DE]/50'
                   }`}
                 >
-                  <Icon className={`w-5 h-5 shrink-0 mt-0.5 ${isActive ? 'text-cyan-400' : 'text-slate-400'}`} />
+                  {/* Subtle left accent bar on active */}
+                  {isActive && (
+                    <span className="absolute left-0 top-1.5 bottom-1.5 w-1 bg-[#285C46] rounded-r" />
+                  )}
+                  <Icon className={`w-4 h-4 shrink-0 mt-0.5 ${isActive ? 'text-[#285C46]' : 'text-[#68736C]'}`} />
                   <div>
-                    <div className="text-sm font-medium leading-none">{item.label}</div>
-                    <div className="text-[11px] text-slate-500 mt-1 leading-tight">{item.desc}</div>
+                    <div className="text-xs font-semibold leading-none">{item.label}</div>
+                    <div className="text-[11px] text-[#89928A] mt-1 leading-tight">{item.desc}</div>
                   </div>
                 </button>
               );
@@ -64,47 +68,47 @@ export const Sidebar: React.FC<SidebarProps> = ({
           </nav>
         </div>
 
-        {/* Data Provenance Box */}
-        <div className="rounded-lg bg-slate-950/80 border border-slate-800 p-3 space-y-2">
-          <div className="text-[10px] font-mono text-slate-500 uppercase font-semibold">
+        {/* Primary Data Sources Card */}
+        <div className="rounded-lg bg-white border border-[#E2E5DE] p-3 space-y-2 shadow-xs">
+          <div className="text-[10px] font-mono text-[#89928A] uppercase font-semibold">
             Primary Data Sources
           </div>
-          <div className="text-xs space-y-1.5 text-slate-400 font-mono">
+          <div className="text-xs space-y-1.5 text-[#68736C] font-mono">
             <div className="flex items-center justify-between">
               <span>Actual:</span>
-              <span className="text-slate-300 font-semibold">FUELHH (WIND)</span>
+              <span className="text-[#29332E] font-semibold">FUELHH (WIND)</span>
             </div>
             <div className="flex items-center justify-between">
               <span>Forecast:</span>
-              <span className="text-slate-300 font-semibold">WINDFOR</span>
+              <span className="text-[#29332E] font-semibold">WINDFOR</span>
             </div>
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between pt-1 border-t border-[#E7E9E3]">
               <span>Coverage:</span>
-              <span className="text-emerald-400 font-semibold">100% Complete</span>
+              <span className="text-[#285C46] font-semibold">100% Complete</span>
             </div>
           </div>
         </div>
       </div>
 
       {/* CSV Downloads in Footer */}
-      <div className="p-4 border-t border-slate-800 bg-slate-950/50 space-y-2">
-        <div className="text-[11px] font-mono text-slate-500 uppercase font-semibold">
+      <div className="p-4 border-t border-[#E2E5DE] bg-[#ECEFE8] space-y-2">
+        <div className="text-[11px] font-mono text-[#89928A] uppercase font-semibold px-1">
           Data Exports
         </div>
         <a
           href={api.getExportEvaluationUrl(cutoffTime, matchingMode)}
           download
-          className="w-full flex items-center justify-center space-x-2 px-3 py-2 rounded-md bg-slate-800 hover:bg-slate-700 text-xs font-mono text-slate-200 border border-slate-700 transition"
+          className="w-full flex items-center justify-center space-x-2 px-3 py-2 rounded-md bg-white hover:bg-[#F5F5F0] text-xs font-medium text-[#29332E] border border-[#E2E5DE] hover:border-[#658A70] transition shadow-xs"
         >
-          <Download className="w-3.5 h-3.5 text-cyan-400" />
+          <Download className="w-3.5 h-3.5 text-[#285C46]" />
           <span>Evaluation Set (CSV)</span>
         </a>
         <a
           href={api.getExportDailyAccuracyUrl(cutoffTime, matchingMode)}
           download
-          className="w-full flex items-center justify-center space-x-2 px-3 py-2 rounded-md bg-slate-800 hover:bg-slate-700 text-xs font-mono text-slate-200 border border-slate-700 transition"
+          className="w-full flex items-center justify-center space-x-2 px-3 py-2 rounded-md bg-white hover:bg-[#F5F5F0] text-xs font-medium text-[#29332E] border border-[#E2E5DE] hover:border-[#658A70] transition shadow-xs"
         >
-          <Download className="w-3.5 h-3.5 text-cyan-400" />
+          <Download className="w-3.5 h-3.5 text-[#285C46]" />
           <span>Daily Accuracy (CSV)</span>
         </a>
       </div>

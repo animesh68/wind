@@ -7,11 +7,11 @@ interface BadgeProps {
 
 export const Badge: React.FC<BadgeProps> = ({ label, variant = 'neutral' }) => {
   const styles = {
-    neutral: 'bg-slate-800 text-slate-300 border-slate-700',
-    success: 'bg-emerald-950/80 text-emerald-400 border-emerald-800/80',
-    warning: 'bg-amber-950/80 text-amber-400 border-amber-800/80',
-    danger: 'bg-rose-950/80 text-rose-400 border-rose-800/80',
-    info: 'bg-cyan-950/80 text-cyan-400 border-cyan-800/80',
+    neutral: 'bg-[#F5F5F0] text-[#68736C] border-[#E2E5DE]',
+    success: 'bg-[#EAF1EB] text-[#285C46] border-[#285C46]/25',
+    warning: 'bg-[#FAF4EB] text-[#C58B38] border-[#C58B38]/25',
+    danger: 'bg-[#FDF2F2] text-[#B95D55] border-[#B95D55]/25',
+    info: 'bg-[#F0F5F2] text-[#285C46] border-[#658A70]/25',
   };
 
   return (
@@ -22,4 +22,3 @@ export const Badge: React.FC<BadgeProps> = ({ label, variant = 'neutral' }) => {
     </span>
   );
 };
-

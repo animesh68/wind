@@ -1,24 +1,54 @@
 @import "tailwindcss";
 
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Manrope', 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --color-app-bg: #F5F5F0;
+  --color-sidebar-bg: #ECEFE8;
+  --color-content-bg: #F5F5F0;
+  --color-card-bg: #FFFFFF;
+  --color-text-primary: #29332E;
+  --color-text-secondary: #68736C;
+  --color-text-muted: #89928A;
+  --color-accent-primary: #285C46;
+  --color-accent-secondary: #658A70;
+  --color-accent-soft: #EAF1EB;
+  --color-amber-warm: #C58B38;
+  --color-red-error: #B95D55;
+  --color-border-subtle: #E2E5DE;
+  --color-divider: #E7E9E3;
+}
+
 @layer base {
   body {
-    @apply bg-slate-950 text-slate-100 antialiased selection:bg-cyan-500 selection:text-slate-950;
+    background-color: #F5F5F0;
+    color: #29332E;
+    font-family: var(--font-sans);
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: #EAF1EB;
+    color: #285C46;
   }
 }
 
-/* Custom terminal scrollbars */
+/* Refined minimal scrollbars */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #090d16;
+  background: #F5F5F0;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: #D5D8D0;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #334155;
+  background: #B8BDB2;
 }
