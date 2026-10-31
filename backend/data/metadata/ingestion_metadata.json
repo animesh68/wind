@@ -1,0 +1,23 @@
+{
+  "ingestion_timestamp": "2026-10-31T08:45:37Z",
+  "period": "January 2026",
+  "sources": {
+    "actuals": "Elexon BMRS FUELHH (fuelType=WIND)",
+    "forecasts": "Elexon BMRS WINDFOR"
+  },
+  "actuals_summary": {
+    "total_records": 1488,
+    "expected_records": 1488,
+    "completeness_pct": 100.0,
+    "min_start_time": "2026-01-01T00:00:00Z",
+    "max_start_time": "2026-01-31T23:30:00Z"
+  },
+  "forecasts_summary": {
+    "total_records": 19856,
+    "distinct_publish_times": 272,
+    "distinct_target_intervals": 865,
+    "min_publish_time": "2025-12-30T02:30:00Z",
+    "max_publish_time": "2026-02-01T22:30:00Z"
+  },
+  "status": "SUCCESS"
+}
