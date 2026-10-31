@@ -76,3 +76,4 @@ def test_csv_exports():
     assert r2.status_code == 200
     assert "text/csv" in r2.headers["content-type"]
     assert "settlement_date" in r2.text
+

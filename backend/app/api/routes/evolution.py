@@ -71,3 +71,4 @@ def get_forecast_evolution(
         points=points,
         explanation=explanation
     )
+

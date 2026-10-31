@@ -56,3 +56,4 @@ def test_zero_actual_generation():
     assert m.mae_mw == 50.0
     # WAPE safely handles zero sum without ZeroDivisionError
     assert m.wape_percent == 0.0
+

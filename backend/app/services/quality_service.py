@@ -117,3 +117,4 @@ class QualityService:
         )
 
 quality_service = QualityService()
+

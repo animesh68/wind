@@ -17,3 +17,4 @@ class ForecastSelectionError(WindIntelligenceException):
 class ResourceNotFoundError(WindIntelligenceException):
     """Raised when a requested delivery date or dataset is not found."""
     pass
+

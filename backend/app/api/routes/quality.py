@@ -22,3 +22,4 @@ def trigger_ingestion():
         return {"status": "SUCCESS", "metadata": meta}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+

@@ -10,3 +10,4 @@ def test_quality_service_evaluation():
     assert res.duplicate_actuals == 0
     assert len(res.assumptions) > 0
     assert "ONLINE" in res.source_api_status
+

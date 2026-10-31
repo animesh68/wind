@@ -55,3 +55,4 @@ def get_day_ahead_cutoff(delivery_date: date, cutoff_time_str: str = "11:00") ->
 def format_hour_label(hour: int) -> str:
     """Format hour integer (0-23) to '00:00 - 01:00' format."""
     return f"{hour:02d}:00"
+

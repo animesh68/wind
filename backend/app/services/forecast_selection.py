@@ -19,6 +19,12 @@ class ForecastSelectionService:
     preventing look-ahead bias and tracking full forecast evolution.
     """
 
+    def __init__(self):
+        self._selection_cache: Dict[Tuple[str, str], pd.DataFrame] = {}
+
+    def clear_cache(self):
+        self._selection_cache.clear()
+
     def select_forecasts(
         self,
         cutoff_time_str: str = "11:00",
@@ -27,6 +33,10 @@ class ForecastSelectionService:
         """
         Select the latest eligible forecast published on or before the day-ahead decision cutoff.
         """
+        cache_key = (cutoff_time_str, matching_mode)
+        if cache_key in self._selection_cache:
+            return self._selection_cache[cache_key].copy()
+
         df_actuals = parquet_store.load_df(settings.ACTUAL_PARQUET, cache_key="actual_generation")
         df_forecasts = parquet_store.load_df(settings.FORECAST_VERSIONS_PARQUET, cache_key="forecast_versions")
         
@@ -121,7 +131,8 @@ class ForecastSelectionService:
         merged["latest_error_mw"] = merged["latest_forecast_mw"] - merged["actual_generation_mw"]
         merged["latest_absolute_error_mw"] = merged["latest_error_mw"].abs()
         
-        return merged
+        self._selection_cache[cache_key] = merged
+        return merged.copy()
 
     def get_forecast_versions_for_interval(
         self,

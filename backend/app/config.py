@@ -48,3 +48,4 @@ settings = Settings()
 # Ensure directories exist
 for p in [DATA_DIR, RAW_DIR, PROCESSED_DIR, METADATA_DIR, RAW_ACTUALS_DIR, RAW_FORECASTS_DIR]:
     p.mkdir(parents=True, exist_ok=True)
+

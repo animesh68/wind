@@ -82,3 +82,4 @@ def get_hourly_metrics(
 ):
     df = forecast_selection_service.select_forecasts(cutoff_time_str=cutoff_time, matching_mode=matching_mode)
     return analytics_service.calculate_hourly_metrics(df)
+

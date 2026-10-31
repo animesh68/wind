@@ -56,3 +56,4 @@ def get_market_overview(
         time_series=time_series,
         daily_summaries=daily_summaries
     )
+

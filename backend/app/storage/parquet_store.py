@@ -75,3 +75,4 @@ class ParquetStore:
             self._metadata_cache = None
 
 parquet_store = ParquetStore()
+

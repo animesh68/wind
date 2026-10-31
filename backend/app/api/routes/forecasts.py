@@ -114,3 +114,4 @@ def get_interval_versions(
         )
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+

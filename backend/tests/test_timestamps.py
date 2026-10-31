@@ -41,3 +41,4 @@ def test_get_day_ahead_cutoff():
     assert cutoff.day == 1
     assert cutoff.hour == 11
     assert cutoff.minute == 0
+

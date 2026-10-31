@@ -171,3 +171,4 @@
 > - *For cloud hosting, the frontend deploys on Vercel with SPA routing, and the backend deploys on Render/Heroku via Docker.*
 >
 > *The entire codebase is structured cleanly, fully documented in the README, and ready for code review. Thank you."*
+

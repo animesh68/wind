@@ -239,3 +239,4 @@ class AnalyticsService:
         return insights
 
 analytics_service = AnalyticsService()
+
