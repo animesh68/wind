@@ -310,7 +310,7 @@ npm run build
 | Component | Status / URL | Description |
 |---|---|---|
 | **Public GitHub Repo** | `https://github.com/animesh68/wind` | Anonymous public repository (`wind`) |
-| **Deployed Web App** | `https://<your-vercel-app-name>.vercel.app` | React 19 Frontend Terminal |
+| **Deployed Web App** | `https://frontend-nine-rust-41.vercel.app` | React 19 Frontend Terminal |
 | **Backend API Health** | `https://wind-intelligence-backend.onrender.com/api/health` | FastAPI health check |
 | **Interactive Docs** | `https://wind-intelligence-backend.onrender.com/docs` | OpenAPI / Swagger UI |
 | **Video Demonstration**| `https://youtu.be/<video-id>` | Unlisted YouTube Walkthrough (< 10 mins) |

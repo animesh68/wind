@@ -1,4 +1,5 @@
 import os
+import re
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
@@ -46,6 +47,13 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+@app.middleware("http")
+async def normalize_path_middleware(request: Request, call_next):
+    raw_path = request.scope.get("path", "")
+    if "//" in raw_path:
+        request.scope["path"] = re.sub(r"/+", "/", raw_path)
+    return await call_next(request)
 
 # Exception handlers
 @app.exception_handler(WindIntelligenceException)

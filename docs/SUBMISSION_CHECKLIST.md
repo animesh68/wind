@@ -153,8 +153,8 @@ Navigate to the official Microsoft Submission Form:
 👉 **[https://forms.cloud.microsoft/r/FTX6K2bbnU](https://forms.cloud.microsoft/r/FTX6K2bbnU)**
 
 Fill in the required fields:
-1. **GitHub Repository URL**: `https://github.com/<username>/<anonymous-repo-name>`
-2. **Deployed Web Application URL**: `https://<your-frontend-name>.vercel.app`
+1. **GitHub Repository URL**: `https://github.com/animesh68/wind`
+2. **Deployed Web Application URL**: `https://frontend-nine-rust-41.vercel.app`
 3. **Video Demonstration URL**: `https://youtu.be/<video-id>` (Unlisted YouTube link)
 4. Confirm all three links open cleanly in an incognito session before clicking **Submit**.
 
