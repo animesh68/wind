@@ -96,7 +96,7 @@
 > - **Backend**: *Python 3.11 with FastAPI, Pydantic v2 for strict type contracts, and PyArrow for high-performance Parquet columnar storage.*
 > - **Frontend**: *React 19 with TypeScript, Vite 8, Tailwind CSS, Lucide icons, and Recharts for interactive quantitative charting.*
 > - **Containerization**: *Docker & Docker Compose for isolated, one-command deployment.*
-> - **Test Suite**: *Pytest covering data ingestion, look-ahead bias prevention, analytics math, and end-to-end API integration."*
+> - **Test Suite**: *Pytest covering data ingestion, look-ahead bias prevention, analytics math, and end-to-end API integration (21 passing tests)."*
 
 ---
 
@@ -153,7 +153,7 @@
 ### [03:30 – 04:15] Automated Test Suite & Code Quality
 > *(Code Review: Inspect `backend/tests/`)*
 >
-> *"Testing is fundamental to our delivery. Our Pytest suite consists of 18 automated tests:*
+> *"Testing is fundamental to our delivery. Our Pytest suite consists of 21 automated tests:*
 > - `test_timestamps.py`: *Validates UK settlement period calculations (SP 1 to 48), timezone normalization, and D-1 cutoff computations.*
 > - `test_analytics.py`: *Validates MAE, RMSE, MBE, and WAPE against manually calculated mathematical fixtures, plus edge cases for zero actuals and empty datasets.*
 > - `test_forecast_selection.py`: *Tests version selection across 4 synthetic scenarios: single eligible version, multiple eligible versions, cutoff exact match, and strictly rejecting versions published after cutoff.*

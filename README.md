@@ -2,7 +2,7 @@
 ### National Wind Generation Forecast & Accuracy Analytics Workstation
 *Developed for the UK Wholesale Day-Ahead Electricity Market | January 2026 Analysis*
 
-[![Tests](https://img.shields.io/badge/tests-18%20passed-emerald)](backend/tests)
+[![Tests](https://img.shields.io/badge/tests-21%20passed-emerald)](backend/tests)
 [![Data](https://img.shields.io/badge/Elexon%20BMRS-100%25%20Complete-cyan)](https://data.elexon.co.uk)
 [![Backend](https://img.shields.io/badge/Backend-FastAPI%20%7C%20PyArrow-blue)](backend)
 [![Frontend](https://img.shields.io/badge/Frontend-React%2019%20%7C%20TypeScript-purple)](frontend)
@@ -269,7 +269,7 @@ Open your browser at `http://localhost:5173`.
 
 ## 8. Running Automated Tests
 
-The backend includes a comprehensive automated test suite of **18 test cases** covering mathematical correctness, cutoff logic, duplicate detection, and API endpoints.
+The backend includes a comprehensive automated test suite of **21 test cases** covering mathematical correctness, cutoff logic, duplicate detection, and API endpoints.
 
 To run the test suite:
 ```bash
@@ -299,10 +299,23 @@ npm run build
 
 ---
 
-## 10. Cloud Deployment
+## 10. Cloud Deployment & Public Access
 
-- **Frontend Deployment (Vercel)**: Configured with `frontend/vercel.json` for single-page routing and dynamic API proxying.
-- **Backend Deployment (Render/Heroku)**: Configured via `render.yaml` or direct Docker deploy.
+### Deployment Architecture
+- **Backend API**: Hosted on Render as a Python Web Service configured via `render.yaml` (or Docker container using `backend/Dockerfile`).
+- **Frontend SPA**: Hosted on Vercel with single-page routing configured via `frontend/vercel.json`.
+- **Pre-Ingested Persistence**: The repository includes pre-processed Parquet files in `backend/data/processed/`, enabling the backend to start and serve requests with zero cold-start delay without hitting upstream Elexon rate limits.
+
+### Public Access Endpoints
+| Component | Status / URL | Description |
+|---|---|---|
+| **Public GitHub Repo** | `https://github.com/<anonymous-username>/<anonymous-repo-name>` | Anonymous public repository (e.g. `kjhwr`) |
+| **Deployed Web App** | `https://<your-vercel-app-name>.vercel.app` | React 19 Frontend Terminal |
+| **Backend API Health** | `https://<your-render-app-name>.onrender.com/api/health` | FastAPI health check |
+| **Interactive Docs** | `https://<your-render-app-name>.onrender.com/docs` | OpenAPI / Swagger UI |
+| **Video Demonstration**| `https://youtu.be/<video-id>` | Unlisted YouTube Walkthrough (< 10 mins) |
+
+*(See [docs/SUBMISSION_CHECKLIST.md](docs/SUBMISSION_CHECKLIST.md) for step-by-step deployment and verification instructions).*
 
 ---
 
