@@ -311,8 +311,8 @@ npm run build
 |---|---|---|
 | **Public GitHub Repo** | `https://github.com/animesh68/wind` | Anonymous public repository (`wind`) |
 | **Deployed Web App** | `https://<your-vercel-app-name>.vercel.app` | React 19 Frontend Terminal |
-| **Backend API Health** | `https://<your-render-app-name>.onrender.com/api/health` | FastAPI health check |
-| **Interactive Docs** | `https://<your-render-app-name>.onrender.com/docs` | OpenAPI / Swagger UI |
+| **Backend API Health** | `https://wind-intelligence-backend.onrender.com/api/health` | FastAPI health check |
+| **Interactive Docs** | `https://wind-intelligence-backend.onrender.com/docs` | OpenAPI / Swagger UI |
 | **Video Demonstration**| `https://youtu.be/<video-id>` | Unlisted YouTube Walkthrough (< 10 mins) |
 
 *(See [docs/SUBMISSION_CHECKLIST.md](docs/SUBMISSION_CHECKLIST.md) for step-by-step deployment and verification instructions).*
