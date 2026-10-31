@@ -309,7 +309,7 @@ npm run build
 ### Public Access Endpoints
 | Component | Status / URL | Description |
 |---|---|---|
-| **Public GitHub Repo** | `https://github.com/<anonymous-username>/<anonymous-repo-name>` | Anonymous public repository (e.g. `kjhwr`) |
+| **Public GitHub Repo** | `https://github.com/animesh68/wind` | Anonymous public repository (`wind`) |
 | **Deployed Web App** | `https://<your-vercel-app-name>.vercel.app` | React 19 Frontend Terminal |
 | **Backend API Health** | `https://<your-render-app-name>.onrender.com/api/health` | FastAPI health check |
 | **Interactive Docs** | `https://<your-render-app-name>.onrender.com/docs` | OpenAPI / Swagger UI |

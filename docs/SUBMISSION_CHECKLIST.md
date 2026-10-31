@@ -23,8 +23,8 @@ This document contains the step-by-step instructions to deploy **WIND INTELLIGEN
 4. Run the following commands from this repository root (`c:\Users\anime\Desktop\work\REint intern`):
 
 ```bash
-# Add the remote repository (replace <username> and <repo-name> with your values)
-git remote add origin https://github.com/<username>/<repo-name>.git
+# Add the remote repository
+git remote add origin https://github.com/animesh68/wind.git
 
 # Ensure the branch is named main
 git branch -M main
@@ -157,3 +157,4 @@ Fill in the required fields:
 2. **Deployed Web Application URL**: `https://<your-frontend-name>.vercel.app`
 3. **Video Demonstration URL**: `https://youtu.be/<video-id>` (Unlisted YouTube link)
 4. Confirm all three links open cleanly in an incognito session before clicking **Submit**.
+
